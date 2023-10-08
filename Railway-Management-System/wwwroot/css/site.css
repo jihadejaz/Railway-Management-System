@@ -1,3 +1,8 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 html {
   font-size: 14px;
 }
@@ -15,4 +20,31 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+#navBg{
+    background-color: green;
+}
+
+#dropdownBg{
+    background-color: green;
+    border: transparent;
+}
+
+#dropdownLink:hover {
+    color: white;
+    background-color: transparent;
+
+}
+
+#navLogo{
+    height:50px;
+}
+
+#toggerButton{
+    color: white;
+}
+
+#togglerIcon{
+    font-size: 25px;
 }

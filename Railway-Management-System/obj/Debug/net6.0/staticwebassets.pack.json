@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\pakistan.png",
+      "PackagePath": "staticwebassets\\images\\pakistan.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
