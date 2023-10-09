@@ -13,9 +13,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm p-2" id="navBg">
+        <nav class="navbar navbar-expand-sm bg-light p-2" id="navBg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="images/webisiteLogo.png" class="img-fluid" id="navLogo" /></a>
+                <a class="navbar-brand" href="#"><img src="/images/webisiteLogo.png" class="img-fluid" id="navLogo" /></a>
 
                 <button class="navbar-toggler" type="button" id="toggelButton" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <i class="fas fa-bars" id="togglerIcon"></i>
@@ -39,6 +39,7 @@
                                 <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 600;">A third link</a></li>
                             </ul>
                         </li>
+
                     </ul>
                 </div>
 
@@ -46,11 +47,96 @@
             </div>
         </nav>
     </header>
-    <div class="container-fluid">
-        <main role="main">
-            @RenderBody()
-        </main>
+
+    <div class="container-fluid bg-light mt-3" id="section1">
+        <ul class="nav justify-content-center mt-0">
+            <li class="nav-item">
+                <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Timings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Schedule</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link p-lg-2" id="HomeLinks" href="#">My Bookings</a>
+
+            </li>
+        </ul>
+
+        <div class="container-fluid mt-3">
+            <div class="row">
+                <div class="col-md-3 p-3 mb-5" style="background-color: darkgreen; border-radius: 15px;">
+                    <div class="conntainer d-flex justify-content-center mb-2">
+                        <a asp-action="Signin" class="btn btn-outline-light btn-sm mx-1" id="authBtn">Sign in</a>
+                        <a asp-action="Signup" class="btn btn-outline-light btn-sm mx-1" id="authBtn">Register Now</a>
+
+                        <a href style="font-weight: 500; border-right: dotted white 1px;" class="nav-item nav-link p-2">
+                            <i class="fab fa-instagram text-light"></i>
+                        </a>
+                        <a href style="font-weight: 500;" class="nav-item nav-link"><i class="fab fa-twitter text-light"></i></a>
+                        <a href style="font-weight: 500; border-left: dotted white 1px;" class="nav-item nav-link">
+                            <i class="fab fa-youtube text-light"></i>
+                        </a>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-light btn-block" id="dgridbtns"
+                                data-bs-toggle="modal" data-bs-target="#myModal">
+                            File a complaint
+                        </button>
+                    </div>
+                    <hr />
+
+                    <form method="POST" enctype="multipart/form-data" asp-action="">
+                        <div class="container p-0">
+                            <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
+                            <div class="container text-center mt-0 p-0">
+                                <select class="form-control bg-light btn-block" id="fareDropdown">
+                                    <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
+                                    <option class="text-center">Agra Express</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="container text-center mt-0 p-0">
+                                <select class="form-control bg-light btn-block" id="fareDropdown">
+                                    <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
+                                    <option class="text-center">New Delhi</option>
+                                </select>
+                            </div>
+                            <br />
+                            <div class="container text-center mt-0 p-0">
+                                <select class="form-control bg-light btn-block" id="fareDropdown">
+                                    <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
+                                    <option class="text-center">Mumbai</option>
+                                </select>
+                                <center><button class="button-64 mt-3" role="button"> <span class="text">Calculate</span> </button></center>
+
+
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+
+                <div class="col-md-9 bg-white mb-5">
+                    <main role="main">
+                        @RenderBody()
+                    </main>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+            </div>
+
+
+        </div>
     </div>
+
+
+
+
+ 
 
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted mt-4">

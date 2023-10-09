@@ -4,122 +4,42 @@
 
 @* MAIN SECTION START *@
 
-<div class="container-fluid bg-light mt-3" id="section1">
-    <ul class="nav justify-content-center mt-0">
-        <li class="nav-item">
-            <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Timings</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Schedule</a>
+<div class="container-fluid p-0">
+    <!-- Carousel -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-        </li>
-        <li class="nav-item">
-            <a class="nav-link p-lg-2" id="HomeLinks" href="#">My Bookings</a>
-
-        </li>
-    </ul>
-
-    <div class="container-fluid mt-3">      
-        <div class="row">
-            <div class="col-md-3 p-3 mb-5" style="background-color: darkgreen; border-radius: 15px;">
-                <div class="conntainer d-flex justify-content-center mb-2">
-                    <a href style="font-weight: 500; border-right: dotted white 1px;" class="nav-item nav-link p-2">
-                        <i class="fab fa-instagram text-light"></i>
-                    </a>
-                    <a href style="font-weight: 500;" class="nav-item nav-link"><i class="fab fa-twitter text-light"></i></a>
-                    <a href style="font-weight: 500; border-left: dotted white 1px;" class="nav-item nav-link">
-                        <i class="fab fa-youtube text-light"></i>
-                    </a>
-                </div>
-                <div class="d-grid">
-                    <button type="button" class="btn btn-light btn-block" id="dgridbtns"
-                    data-bs-toggle="modal" data-bs-target="#myModal" >File a complaint</button>  
-                </div>
-                <hr />
-                
-                <form method="POST" enctype="multipart/form-data" asp-action="">
-                    <div class="container p-0">
-                        <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
-                        <div class="container text-center mt-0 p-0">
-                            <select class="form-control bg-light btn-block" id="fareDropdown">
-                                <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
-                                <option class="text-center">Agra Express</option>
-                            </select>
-                        </div>
-                        <br />
-                        <div class="container text-center mt-0 p-0">
-                            <select class="form-control bg-light btn-block" id="fareDropdown">
-                                <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
-                                <option class="text-center">New Delhi</option>
-                            </select>
-                        </div>
-                        <br />
-                        <div class="container text-center mt-0 p-0">
-                            <select class="form-control bg-light btn-block" id="fareDropdown">
-                                <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
-                                <option class="text-center">Mumbai</option>
-                            </select>
-                            <center><button class="button-64 mt-3" role="button"> <span class="text">Calculate</span> </button></center>
-
-
-                        </div>
-
-                    </div>
-                </form>
-               
-            </div>
-
-            <div class="col-md-9 mb-5">
-                <div class="container-fluid p-0">
-                    <!-- Carousel -->
-                    <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
-                        <!-- Indicators/dots -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-                            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-                        </div>
-
-                        <!-- The slideshow/carousel -->
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="images/carousal1.png" alt="Los Angeles" class="d-block img-thumbnail" style="width:100%">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/carousal2.png" alt="Chicago" class="d-block img-thumbnail" style="width:100%">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="images/carousal3.png" alt="New York" class="d-block img-thumbnail" style="width:100%">
-                            </div>
-                        </div>
-
-                        <!-- Left and right controls/icons -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon"></span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-                            <span class="carousel-control-next-icon"></span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
         </div>
+
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="images/carousal1.png" alt="Los Angeles" class="d-block img-thumbnail" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousal2.png" alt="Chicago" class="d-block img-thumbnail" style="width:100%">
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousal3.png" alt="New York" class="d-block img-thumbnail" style="width:100%">
+            </div>
+        </div>
+
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
     </div>
 </div>
+ 
 
 @* TABS START  *@
-
-<div class="container-fluid bg-light mt-3" id="section2">
-    <div class="row">
-        <div class="col-md-9 p-3">
-            
-        </div>
-
-    </div>
-
-</div>
 
 @* TABS END  *@
 
@@ -130,7 +50,7 @@
 
 <!-- The Modal -->
 <div class="modal fade mt-5" id="myModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-xl">
         <div class="modal-content">
 
             <!-- Modal Header -->
@@ -153,3 +73,32 @@
     </div>
 </div>
 @* FILE A COMPLAINT MODAL END*@
+
+
+@* SIGN IN MODAL*@
+
+<!-- The Modal -->
+<div class="modal fade mt-5" id="signInModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Modal Heading</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Modal body..
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+@* SIGN IN MODAL END*@
