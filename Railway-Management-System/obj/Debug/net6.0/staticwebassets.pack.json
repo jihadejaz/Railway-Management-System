@@ -13,8 +13,36 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\bodyBackground.png",
+      "PackagePath": "staticwebassets\\images\\bodyBackground.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\carousal1.png",
+      "PackagePath": "staticwebassets\\images\\carousal1.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\carousal2.png",
+      "PackagePath": "staticwebassets\\images\\carousal2.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\carousal3.png",
+      "PackagePath": "staticwebassets\\images\\carousal3.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\pakistan.png",
       "PackagePath": "staticwebassets\\images\\pakistan.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\phoneViewBg.png",
+      "PackagePath": "staticwebassets\\images\\phoneViewBg.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\train1.png",
+      "PackagePath": "staticwebassets\\images\\train1.png"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\webisiteLogo.png",
+      "PackagePath": "staticwebassets\\images\\webisiteLogo.png"
     },
     {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\js\\site.js",
@@ -247,6 +275,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\videos\\trainVideo1.mp4",
+      "PackagePath": "staticwebassets\\videos\\trainVideo1.mp4"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Railway-Management-System.Microsoft.AspNetCore.StaticWebAssets.props",
