@@ -13,9 +13,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm bg-light p-2" id="navBg">
+        <nav class="navbar navbar-expand-sm bg-white p-2" id="navBg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="/images/webisiteLogo.png" class="img-fluid" id="navLogo" /></a>
+                <a class="navbar-brand" asp-action="Index"><img src="/images/webisiteLogo.png" class="img-fluid" id="navLogo" /></a>
 
                 <button class="navbar-toggler" type="button" id="toggelButton" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <i class="fas fa-bars" id="togglerIcon"></i>
@@ -23,22 +23,35 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav mx-lg-5 justify-content-between" id="mobileNavlinkMargin">
                         <li class="nav-item">
-                            <a class="nav-link text-black" asp-action="Index" style="font-weight: 600;">Home</a>
+                            <a class="nav-link text-black" asp-action="Index" style="font-weight: 400;">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" href="#" style="font-weight: 600;">Gallery</a>
+                            <a class="nav-link text-black" href="#" style="font-weight: 400;">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" href="#" style="font-weight: 600;">Privacy Policy</a>
+                            <a class="nav-link text-black" href="#" style="font-weight: 400;">Privacy Policy</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight: 600;">Dropdown</a>
+                            <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight: 400;">Dropdown</a>
                             <ul class="dropdown-menu" id="dropdownBg">
-                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 600;">Link</a></li>
-                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 600;">Another link</a></li>
-                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 600;">A third link</a></li>
+                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">Link</a></li>
+                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">Another link</a></li>
+                                <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">A third link</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
+                        </li>
+                    @*     @if (!string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+                        {
+                            <li class="nav-item">
+                                @HttpContext.Session.GetString("userName")
+
+                            </li>
+                        } *@
+
+
+                        
 
                     </ul>
                 </div>
@@ -67,8 +80,7 @@
             <div class="row">
                 <div class="col-md-3 p-3 mb-5" style="background-color: darkgreen; border-radius: 15px;">
                     <div class="conntainer d-flex justify-content-center mb-2">
-                        <a asp-action="Signin" class="btn btn-outline-light btn-sm mx-1" id="authBtn">Sign in</a>
-                        <a asp-action="Signup" class="btn btn-outline-light btn-sm mx-1" id="authBtn">Register Now</a>
+                        <a asp-action="Signin" class="btn btn-outline-light" id="authBtn">Sign in</a>
 
                         <a href style="font-weight: 500; border-right: dotted white 1px;" class="nav-item nav-link p-2">
                             <i class="fab fa-instagram text-light"></i>
@@ -90,7 +102,7 @@
                         <div class="container p-0">
                             <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
                             <div class="container text-center mt-0 p-0">
-                                <select class="form-control bg-light btn-block" id="fareDropdown">
+                                <select class="form-control bg-light btn-block" id="fareDropdown" >
                                     <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
                                     <option class="text-center">Agra Express</option>
                                 </select>
@@ -118,7 +130,7 @@
 
                 </div>
 
-                <div class="col-md-9 bg-white mb-5">
+                <div class="col-md-9 bg-white mb-5" id="section2">
                     <main role="main">
                         @RenderBody()
                     </main>

@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\xampp\htdocs\My C#\Railway-Management-System\Railway-Management-System
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/xampp/htdocs/My C\#/Railway-Management-System/Railway-Management-System/Views/Home/Admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/xampp/htdocs/My C\#/Railway-Management-System/Railway-Management-System/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

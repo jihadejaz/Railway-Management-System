@@ -9,8 +9,10 @@ namespace Railway_Management_System.Models
         [Required]
         public string User_name { get; set; }
         [Required]
-        public string Password { get; set; } = "rms2023";
+        public string Password { get ; set; }
         public string Role { get; set; } = "User";
+        public string remember_Me { get; set; } = "False";
+
 
 
     }

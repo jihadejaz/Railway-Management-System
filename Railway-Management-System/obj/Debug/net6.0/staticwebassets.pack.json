@@ -41,6 +41,10 @@
       "PackagePath": "staticwebassets\\images\\train1.png"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\train2.png",
+      "PackagePath": "staticwebassets\\images\\train2.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\webisiteLogo.png",
       "PackagePath": "staticwebassets\\images\\webisiteLogo.png"
     },
@@ -275,6 +279,10 @@
     {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\videos\\animatedBg.mp4",
+      "PackagePath": "staticwebassets\\videos\\animatedBg.mp4"
     },
     {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\videos\\trainVideo1.mp4",

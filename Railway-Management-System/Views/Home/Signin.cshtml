@@ -2,6 +2,22 @@
 @{
     ViewData["Title"] = "Signin";
 }
+@model Railway_Management_System.Models.RMSpassengers;
 
-<h1>Signin</h1>
+<div class="container-fluid">
+    <span class="text-white bg-danger p-1">@ViewBag.error</span>
 
+    <form asp-action="Signin" method="post">
+        <div class="mb-3 mt-3">
+            <label for="email">User Name:</label>
+            <input type="name" class="form-control" id="email" placeholder="user_name" name="username">
+            <span class="text-danger" asp-validation-for="User_name"></span>
+        </div>
+        <div class="mb-3">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="password" name="password">
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+        <button type="submit" id="authBtn" class="btn btn-primary">Submit</button>
+    </form>
+</div>
