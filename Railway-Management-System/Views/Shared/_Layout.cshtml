@@ -39,20 +39,12 @@
                                 <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">A third link</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
-                        </li>
-                    @*     @if (!string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+                        @if (string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
                         {
                             <li class="nav-item">
-                                @HttpContext.Session.GetString("userName")
-
+                                <a class="nav-link text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
                             </li>
-                        } *@
-
-
-                        
-
+                        }
                     </ul>
                 </div>
 
@@ -80,8 +72,17 @@
             <div class="row">
                 <div class="col-md-3 p-3 mb-5" style="background-color: darkgreen; border-radius: 15px;">
                     <div class="conntainer d-flex justify-content-center mb-2">
-                        <a asp-action="Signin" class="btn btn-outline-light" id="authBtn">Sign in</a>
+                        @if (string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
+                        {
+                            <a asp-action="Signin" class="btn btn-outline-light" id="authBtn">Sign in</a>
+                        }
+                        else
+                        {
+                            <button class="btn btn-outline-light btn-sm">Welcome onboard, 
+                                @Context.Request.HttpContext.Session.GetString("userName")
+                            </button>
 
+                        }
                         <a href style="font-weight: 500; border-right: dotted white 1px;" class="nav-item nav-link p-2">
                             <i class="fab fa-instagram text-light"></i>
                         </a>
