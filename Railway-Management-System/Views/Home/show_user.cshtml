@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Tittle"] = "All user";
+}
+
+@{
+    Layout = "_LayoutAdmin";
+
+}
+
+@model IEnumerable<RMSpassengers>
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                        
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @foreach (var data in Model)
+                    {
+                        
+                    <tr>
+                        <td>@data.Passenger_Id</td>
+                        <td>@data.User_name</td>
+                         <td>@data.Password</td>
+                        <td>@data.Role</td>
+                        <td>
+                         <div class="media-body">
+                            <div class="badge badge-pill badge-success mb-1 float-right">
+                                <a asp-action="Update_user" asp-route-id="@data.Passenger_Id" >update</a>
+                              
+                            </div>
+
+                          </div>
+                        </td>
+                        <td>
+                            <div class="media-body">
+                             <div class="badge badge-pill badge-danger mb-1 float-right">
+                                   <a asp-action="delete_user" asp-route-id="@data.Passenger_Id">Delete</a>
+                            </div>
+
+                            </div>
+                        </td>
+                    </tr>
+                        
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
