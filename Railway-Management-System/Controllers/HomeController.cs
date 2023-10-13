@@ -97,9 +97,61 @@ namespace Railway_Management_System.Controllers
             }
             else
             {
-                ViewBag.error = "User not found"; // Adjust the error message as needed
+                ViewBag.error = "User not found"; 
             }
 
+            return View();
+        }
+
+        //USER PROFILE METHOD
+        public IActionResult myAccount(string username)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+            {
+                ViewBag.error = "Please Login First";
+                return View("Signin"); 
+            }
+
+            if (!string.IsNullOrEmpty(username))
+            {
+                var user = data.Passengers.FirstOrDefault(u => u.User_name == username);
+
+                if (user != null) 
+                {
+                    ViewBag.success = "User found";
+                    return View("myAccount", user);
+                }else
+                {
+
+                }
+            }
+
+            ViewBag.Error = "404 'No user found'";
+            return View("myAccount");
+        }
+
+        public IActionResult complaintFile()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult complaintFile(RMScomplaints complaints)
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+            {
+                ViewBag.error = "Please Login First";
+                return View("Signin");
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            ViewBag.success = "Complaint has been filed";
+            data.complaints.Add(complaints);
+            data.SaveChanges();
             return View();
         }
 

@@ -11,7 +11,7 @@
     <form asp-action="Signup" method="POST">
         <div class="mb-3 mt-3 mb-sm-5">
             <label for="email">User Name:</label>
-            <input type="name" class="form-control" id="email" placeholder="Enter User_name" asp-for="User_name">
+            <input type="name" class="form-control" style="border: 1px solid cyan; border-radius: 15px;" id="email" placeholder="Enter User_name" asp-for="User_name">
             <span class="text-danger" asp-validation-for="User_name"></span>
         </div>
         <div class="mb-3">

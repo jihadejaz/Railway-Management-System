@@ -12,6 +12,9 @@ namespace Railway_Management_System.Models
         public DbSet<trainMaster> TrainMasters { get; set; }
         public DbSet<stationMaster> StationMasters { get; set; }
 
+        public DbSet<RMScomplaints> complaints { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Define any additional configurations here, such as relationships, indexes, etc.
