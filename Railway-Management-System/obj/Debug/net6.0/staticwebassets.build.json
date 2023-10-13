@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nQ8FkdvZ5AyLMOCsz6jgVpWU2RVt0nmEMkcAbDNkhq0=",
+  "Hash": "yhGenbaeHP3Ykjpc8dVsaFEhX2aPVoLFJYhnYqxRAs4=",
   "Source": "Railway-Management-System",
   "BasePath": "_content/Railway-Management-System",
   "Mode": "Default",
@@ -168,6 +168,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\mumbai.png"
+    },
+    {
+      "Identity": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\mumbaiTabImage.png",
+      "SourceId": "Railway-Management-System",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\",
+      "BasePath": "_content/Railway-Management-System",
+      "RelativePath": "images/mumbaiTabImage.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\mumbaiTabImage.png"
     },
     {
       "Identity": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\pakistan.png",

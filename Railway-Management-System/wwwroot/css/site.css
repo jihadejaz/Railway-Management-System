@@ -25,7 +25,7 @@
         display: 
     }*/
 
-	
+
 
 }
 
@@ -73,26 +73,25 @@ body {
 }
 
 #authBtn {
-    background-color: navy;
-    border-radius: 15px;
-    border: transparent;
-    font-weight: 500;
-    border: 1px solid navy;
-    color: white;
+	background-color: navy;
+	border-radius: 15px;
+	border: transparent;
+	font-weight: 500;
+	border: 1px solid navy;
+	color: white;
 }
 
 
-#authBtn:hover {
-    background-color: white;
-    color: black;
-    border-radius: 15px;
-}
+	#authBtn:hover {
+		background-color: white;
+		color: black;
+		border-radius: 15px;
+	}
 
 #section2 {
 	border-radius: 15px;
 	background-size: cover;
-	background-attachment:fixed;
-	
+	background-attachment: fixed;
 	/*background-image: linear-gradient(144deg,darkgreen, #5B42F3 50%,#00DDEB);*/
 }
 
@@ -107,12 +106,21 @@ body {
 	font-weight: 500;
 }
 
-#homeTabs{
-	background-color: green;
-	color: white;
-	border-radius: 0;
-	border-right: dotted white 1px;
+#homeTabs {
+	background-color: #F4C430;
+	color: black;
+	border-radius: 9px;
+	border: transparent;
+	/*border-right: dotted white 1px;*/
 }
+
+/*#mumbaiTab{
+	background: url(../images/mumbaiTabImage.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+	opacity: revert-layer;
+}*/
 
 #dgridbtns {
 	border-radius: 15px;
@@ -123,7 +131,7 @@ body {
 
 #fareDropdown {
 	border: 0px;
-	border-radius:15px;
+	border-radius: 15px;
 }
 
 
@@ -179,10 +187,15 @@ body {
 	padding: 5px;
 	border-radius: 15px;
 }
-#complaintDropdownList{
+
+#complaintDropdownList {
 	border: 1px solid cyan;
 	background-color: white;
 	border-radius: 15px;
+}
+
+#tabsThead {
+	background-color: #F4C430;
 }
 
 @media (min-width: 768px) {
@@ -204,7 +217,7 @@ body {
 
 @media (max-width: 750px) {
 	#homeTabs {
-		padding: 1px;
-		font-size: 14px;
+		padding: 3px;
+		font-size: 13px;
 	}
 }

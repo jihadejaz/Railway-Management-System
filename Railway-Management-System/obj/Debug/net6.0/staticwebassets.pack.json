@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\images\\mumbai.png"
     },
     {
+      "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\mumbaiTabImage.png",
+      "PackagePath": "staticwebassets\\images\\mumbaiTabImage.png"
+    },
+    {
       "Id": "C:\\xampp\\htdocs\\My C#\\Railway-Management-System\\Railway-Management-System\\wwwroot\\images\\pakistan.png",
       "PackagePath": "staticwebassets\\images\\pakistan.png"
     },
