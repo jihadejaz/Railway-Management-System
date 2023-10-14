@@ -40,12 +40,12 @@ namespace Railway_Management_System.Controllers
             }
             else
             {
-                var existingUser = data.passengers.FirstOrDefault(u => u.User_name == passengers.User_name);
+                var existingUser = data.Passengers.FirstOrDefault(u => u.User_name == passengers.User_name);
                 if (existingUser != null)
                 {
                     existingUser.remember_Me = passengers.remember_Me;
 
-                    data.passengers.Update(existingUser);
+                    data.Passengers.Update(existingUser);
                     data.SaveChanges();
                     ViewBag.success = "Record Updated Successfully";
 
@@ -55,7 +55,7 @@ namespace Railway_Management_System.Controllers
                 {
                     ViewBag.success = "Congratulation Account created! Your temporary password is 'rms123'";
                     passengers.Password = "rms123"; // Update the password as needed
-                    data.passengers.Add(passengers);
+                    data.Passengers.Add(passengers);
                     data.SaveChanges();
 
                 }
@@ -74,7 +74,7 @@ namespace Railway_Management_System.Controllers
         [HttpPost]
         public IActionResult Signin(string username, string password)
         {
-            var verify = data.passengers.FirstOrDefault(u => u.User_name == username);
+            var verify = data.Passengers.FirstOrDefault(u => u.User_name == username);
 
             if (verify != null)
             {

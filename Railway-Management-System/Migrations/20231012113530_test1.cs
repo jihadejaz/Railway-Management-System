@@ -5,7 +5,7 @@
 namespace Railway_Management_System.Migrations
 {
     /// <inheritdoc />
-    public partial class test : Migration
+    public partial class test1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,8 @@ namespace Railway_Management_System.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     User_name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    remember_Me = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
