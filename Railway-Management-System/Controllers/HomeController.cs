@@ -116,7 +116,7 @@ namespace Railway_Management_System.Controllers
             return View();
         }
 
-        [HttpGet]
+       
         public IActionResult Update_user(int id)
         {
             var update = data.passengers.Find(id);
@@ -130,13 +130,17 @@ namespace Railway_Management_System.Controllers
         {
             
 
-                if (ModelState.IsValid)
-                {
-                    data.Update(rms);
-                    data.SaveChanges();
-                    return RedirectToAction("Index");
+                if (ModelState.IsValid){
+
+                data.passengers.Update(rms);
+                data.SaveChanges();
+
+                ViewBag.success = "User Recorde Update success";
+                return RedirectToAction("show_user");
                 }
-                return View(rms);
+                
+
+                return View();
     
         }
 
@@ -148,13 +152,15 @@ namespace Railway_Management_System.Controllers
             return View(userdata);
         }
 
+
+
         public IActionResult delete_user(int id)
         {
             var delete = data.passengers.Find(id);
             data.passengers.Remove(delete);
             data.SaveChanges();
             
-            TempData["msg"] = "User Recorde Delete success";
+            ViewBag.error = "User Recorde Delete success";
 
             return RedirectToAction("show_user");
         }
