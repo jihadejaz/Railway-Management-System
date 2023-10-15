@@ -7,6 +7,10 @@
     "\\Railway-Management-System\\Views",
     "\\Railway-Management-System\\Views\\Home"
   ],
+<<<<<<< HEAD
   "SelectedNode": "\\Railway-Management-System\\Models\\MyDbContext.cs",
+=======
+  "SelectedNode": "\\Railway-Management-System\\Views\\Home\\show_user.cshtml",
+>>>>>>> hussain
   "PreviewInSolutionExplorer": false
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Railway_Management_System.Models;
 using System.Diagnostics;
 
@@ -108,6 +109,62 @@ namespace Railway_Management_System.Controllers
         {
             return View();
         }
+
+
+        public IActionResult demi_user()
+        {
+            return View();
+        }
+
+       
+        public IActionResult Update_user(int id)
+        {
+            var update = data.passengers.Find(id);
+
+            return View(update);
+        }
+
+
+        [HttpPost]
+        public IActionResult Update_user(RMSpassengers rms)
+        {
+            
+
+                if (ModelState.IsValid){
+
+                data.passengers.Update(rms);
+                data.SaveChanges();
+
+                ViewBag.success = "User Recorde Update success";
+                return RedirectToAction("show_user");
+                }
+                
+
+                return View();
+    
+        }
+
+
+
+        public IActionResult show_user()
+        {
+            var userdata = data.passengers.ToList();
+            return View(userdata);
+        }
+
+
+
+        public IActionResult delete_user(int id)
+        {
+            var delete = data.passengers.Find(id);
+            data.passengers.Remove(delete);
+            data.SaveChanges();
+            
+            ViewBag.error = "User Recorde Delete success";
+
+            return RedirectToAction("show_user");
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
