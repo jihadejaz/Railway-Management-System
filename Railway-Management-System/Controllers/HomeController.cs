@@ -107,7 +107,10 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Admin()
         {
-            return View();
+            var user = data.Passengers.Count();
+            ViewBag.user = user;
+
+            return View(user);
         }
 
 
@@ -119,7 +122,7 @@ namespace Railway_Management_System.Controllers
        
         public IActionResult Update_user(int id)
         {
-            var update = data.passengers.Find(id);
+            var update = data.Passengers.Find(id);
 
             return View(update);
         }
@@ -132,15 +135,14 @@ namespace Railway_Management_System.Controllers
 
                 if (ModelState.IsValid){
 
-                data.passengers.Update(rms);
+                data.Passengers.Update(rms);
                 data.SaveChanges();
 
                 ViewBag.success = "User Recorde Update success";
                 return RedirectToAction("show_user");
                 }
-                
-
-                return View();
+                         
+            return View();
     
         }
 
@@ -148,7 +150,7 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult show_user()
         {
-            var userdata = data.passengers.ToList();
+            var userdata = data.Passengers.ToList();
             return View(userdata);
         }
 
@@ -156,13 +158,27 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult delete_user(int id)
         {
-            var delete = data.passengers.Find(id);
-            data.passengers.Remove(delete);
+            var delete = data.Passengers.Find(id);
+            data.Passengers.Remove(delete);
             data.SaveChanges();
             
             ViewBag.error = "User Recorde Delete success";
 
             return RedirectToAction("show_user");
+        }
+
+
+        public IActionResult Add_train()
+        {
+
+            return View();
+        }
+
+
+        public IActionResult Add_station()
+        {
+
+            return View();
         }
 
 

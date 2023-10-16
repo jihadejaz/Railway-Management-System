@@ -2,10 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\Railway-Management-System",
+    "\\Railway-Management-System\\Controllers",
     "\\Railway-Management-System\\Models",
     "\\Railway-Management-System\\Views",
     "\\Railway-Management-System\\Views\\Home"
   ],
-  "SelectedNode": "\\Railway-Management-System\\Models\\MyDbContext.cs",
+  "SelectedNode": "\\Railway-Management-System\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
