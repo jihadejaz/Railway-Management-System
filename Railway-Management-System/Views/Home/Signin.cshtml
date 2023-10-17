@@ -4,18 +4,18 @@
 }
 @model Railway_Management_System.Models.RMSpassengers;
 
-<div class="container-fluid">
-    <span class="text-white bg-danger p-1">@ViewBag.error</span>
+<div class="container-fluid p-0">
+    <span class="text-white bg-danger p-0">@ViewBag.error</span>
 
     <form asp-action="Signin" method="post">
         <div class="mb-3 mt-3">
             <label for="email">User Name:</label>
-            <input type="name" class="form-control" id="email" placeholder="user_name" name="username">
+            <input type="name" class="form-control" id="email" placeholder="User_name" name="username" style="border-radius: 15px; border-color: cyan;">
             <span class="text-danger" asp-validation-for="User_name"></span>
         </div>
         <div class="mb-3">
             <label for="pwd">Password:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="password" name="password">
+            <input type="password" class="form-control" id="pwd" placeholder="Password" name="password" style="border-radius: 15px; border-color: cyan;">
             <span class="text-danger" asp-validation-for="Password"></span>
         </div>
         <button type="submit" id="authBtn" class="btn btn-primary">Submit</button>

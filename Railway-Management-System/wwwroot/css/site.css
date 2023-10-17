@@ -176,3 +176,16 @@ body {
 		height: 100vh !important;
 	}
 }
+
+@media (max-width: 768px) {
+	#tabsLinks {
+		padding: 7px;
+		font-size: 15px;
+	}
+}
+
+#tabsLinks {
+	background-color: #F4C430;
+	color: black;
+	border-radius: 7px;
+}
