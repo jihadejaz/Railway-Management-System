@@ -63,7 +63,7 @@ body {
 	border-radius: 30px;
 	background-size: cover;
 	background: url('../images/train2.png');
-	background-color: darkgreen;
+	/*background-color: darkgreen;*/
 	background-repeat: no-repeat;
 	background-position: center;
 	background-attachment: fixed;
@@ -187,5 +187,19 @@ body {
 #tabsLinks {
 	background-color: #F4C430;
 	color: black;
-	border-radius: 7px;
+	border-radius: 0;
+}
+
+#bookingField {
+	border-radius: 0;
+}
+
+#bookingSection{
+	background: url(../images/bookingBackground.png);
+	/*background-attachment: fixed;*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 35vh;
+	opacity: 0.9;
 }

@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\Railway-Management-System",
-    "\\Railway-Management-System\\Controllers",
-    "\\Railway-Management-System\\Models",
-    "\\Railway-Management-System\\Views",
-    "\\Railway-Management-System\\Views\\Home"
+    ""
   ],
-  "SelectedNode": "\\Railway-Management-System\\appsettings.json",
+  "SelectedNode": "\\Railway-Management-System.sln",
   "PreviewInSolutionExplorer": false
 }

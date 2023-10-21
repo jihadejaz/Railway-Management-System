@@ -113,6 +113,16 @@ namespace Railway_Management_System.Controllers
             return View(user);
         }
 
+        public IActionResult trainTimings()
+        {
+            return View();
+        }
+
+        public IActionResult stationSchedule()
+        {
+            return View();
+        }
+
 
         public IActionResult demi_user()
         {

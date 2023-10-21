@@ -56,10 +56,10 @@
     <div class="container-fluid bg-light mt-3" id="section1">
         <ul class="nav justify-content-center mt-0">
             <li class="nav-item">
-                <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Timings</a>
+                <a class="nav-link p-lg-2" id="HomeLinks" asp-action="trainTimings">Train Timings</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link p-lg-2" id="HomeLinks" href="#">Train Schedule</a>
+                <a class="nav-link p-lg-2" id="HomeLinks" asp-action="stationSchedule">Station Schedule</a>
 
             </li>
             <li class="nav-item">
@@ -83,11 +83,11 @@
                             </button>
 
                         }
-                        <a href style="font-weight: 500; border-right: dotted white 1px;" class="nav-item nav-link p-2">
+                        <a href style="font-weight: 500; border-right: solid white 1px;" class="nav-item nav-link p-2">
                             <i class="fab fa-instagram text-light"></i>
                         </a>
                         <a href style="font-weight: 500;" class="nav-item nav-link"><i class="fab fa-twitter text-light"></i></a>
-                        <a href style="font-weight: 500; border-left: dotted white 1px;" class="nav-item nav-link">
+                        <a href style="font-weight: 500; border-left: solid white 1px;" class="nav-item nav-link">
                             <i class="fab fa-youtube text-light"></i>
                         </a>
                     </div>
@@ -125,7 +125,6 @@
 
 
                             </div>
-
                         </div>
                     </form>
 
@@ -150,7 +149,6 @@
 
 
  
-
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted mt-4">
         <!-- Section: Social media -->
