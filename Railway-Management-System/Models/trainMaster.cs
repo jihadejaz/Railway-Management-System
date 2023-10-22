@@ -21,6 +21,6 @@ namespace Railway_Management_System.Models
         public string trainCategory { get; set; }
 
 
-        public stationMaster stationMaster { get; set; } // Navigation property
+    /*    public stationMaster stationMaster { get; set; } // Navigation property*/
     }
 }

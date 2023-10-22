@@ -27,7 +27,8 @@
                 <form asp-action="Add_train" method="post">
         
                     <div class="card">
-                        <span class="text-success">@TempData.Peek("msg")</span>
+                      
+                        <span class="text-success">@ViewBag.msg</span>
                         <div class="card-header">
                             <h4>Input Text</h4>
                         </div>

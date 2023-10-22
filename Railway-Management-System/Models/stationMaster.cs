@@ -15,7 +15,7 @@ namespace Railway_Management_System.Models
         [Required]
         public string stationDivision { get; set; }
 
-        [InverseProperty("stationMaster")] // Define the inverse navigation property
-        public List<trainMaster> TrainMasters { get; set; }
+      /*  [InverseProperty("stationMaster")] // Define the inverse navigation property
+        public List<trainMaster> TrainMasters { get; set; }*/
     }
 }

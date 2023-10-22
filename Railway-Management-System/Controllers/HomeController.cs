@@ -194,6 +194,7 @@ namespace Railway_Management_System.Controllers
                 data.SaveChanges();
 
                 TempData["msg"] = "Train Add Success";
+                ViewBag.msg = "Train Add Success";
             }
 
             return View();
@@ -214,8 +215,8 @@ namespace Railway_Management_System.Controllers
             {
                 data.StationMasters.Add(station);
                 data.SaveChanges();
-               
-				TempData["msg"] = "Station Add Success";
+
+                ViewBag.msg = "Add Station Success";
 
                return RedirectToAction("Add_station");
 			}
@@ -227,9 +228,33 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Admin_profile()
         {
+            if (HttpContext.Session.GetString("admin") != null)
+            {
+                string a = HttpContext.Session.GetString("admin");
+                var adminProfile = data.Passengers.FirstOrDefault(p => p.User_name == a && p.Role == "Admin");
+
+                if (adminProfile != null)
+                {
+                 
+                return View(adminProfile); 
+                }
+    
+            }
 
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult Admin_profile(RMSpassengers passanger)
+        {
+            data.Passengers.Update(passanger);
+            data.SaveChanges();
+
+            return RedirectToAction("Admin_profile");
+        }
+
+
 
 
 
