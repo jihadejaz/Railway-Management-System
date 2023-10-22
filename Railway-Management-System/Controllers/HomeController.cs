@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Railway_Management_System.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 
 
 namespace Railway_Management_System.Controllers
@@ -12,6 +13,7 @@ namespace Railway_Management_System.Controllers
         public HomeController(MyDbContext myDbContext)
         {
             data = myDbContext;
+
         }
 
         public IActionResult Index()
@@ -89,7 +91,16 @@ namespace Railway_Management_System.Controllers
                 {
                     HttpContext.Session.SetString("admin", verify.User_name);
 
+                    if (HttpContext.Session.GetString("admin") != null)
+                    {
+
+                   String a=HttpContext.Session.GetString("admin");
+                   TempData["Data"] = a;
+
                     return RedirectToAction("Admin");
+                    }
+                    
+
                 }
                 else
                 {
@@ -105,18 +116,19 @@ namespace Railway_Management_System.Controllers
         }
 
 
+
+
+
+
+
+        /* Admin pannel function*/
+
         public IActionResult Admin()
         {
             var user = data.Passengers.Count();
             ViewBag.user = user;
 
             return View(user);
-        }
-
-
-        public IActionResult demi_user()
-        {
-            return View();
         }
 
        
@@ -148,6 +160,7 @@ namespace Railway_Management_System.Controllers
 
 
 
+
         public IActionResult show_user()
         {
             var userdata = data.Passengers.ToList();
@@ -161,15 +174,27 @@ namespace Railway_Management_System.Controllers
             var delete = data.Passengers.Find(id);
             data.Passengers.Remove(delete);
             data.SaveChanges();
-            
+
             ViewBag.error = "User Recorde Delete success";
 
             return RedirectToAction("show_user");
         }
 
-
         public IActionResult Add_train()
         {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Add_train(trainMaster train)
+        {
+            if (ModelState.IsValid)
+            {
+                data.TrainMasters.Add(train);
+                data.SaveChanges();
+
+                TempData["msg"] = "Train Add Success";
+            }
 
             return View();
         }
@@ -180,6 +205,32 @@ namespace Railway_Management_System.Controllers
 
             return View();
         }
+
+
+        [HttpPost]
+        public IActionResult Add_station(stationMaster station)
+        {
+            if (ModelState.IsValid)
+            {
+                data.StationMasters.Add(station);
+                data.SaveChanges();
+               
+				TempData["msg"] = "Station Add Success";
+
+               return RedirectToAction("Add_station");
+			}
+
+            // If ModelState is not valid, return to the form with validation errors
+            return View();
+        }
+
+
+        public IActionResult Admin_profile()
+        {
+
+            return View();
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

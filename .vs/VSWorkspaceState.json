@@ -5,8 +5,9 @@
     "\\Railway-Management-System\\Controllers",
     "\\Railway-Management-System\\Models",
     "\\Railway-Management-System\\Views",
-    "\\Railway-Management-System\\Views\\Home"
+    "\\Railway-Management-System\\Views\\Home",
+    "\\Railway-Management-System\\Views\\Shared"
   ],
-  "SelectedNode": "\\Railway-Management-System\\appsettings.json",
+  "SelectedNode": "\\Railway-Management-System\\Models\\stationMaster.cs",
   "PreviewInSolutionExplorer": false
 }

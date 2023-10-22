@@ -7,8 +7,12 @@ namespace Railway_Management_System.Models
     {
         [Key]
         public int stationId { get; set; }
-        public int stationCode { get; set; }
+
+        [Required(ErrorMessage = "The station code field is required.")]
+        public int? stationCode { get; set; }
+        [Required]
         public string stationName { get; set; }
+        [Required]
         public string stationDivision { get; set; }
 
         [InverseProperty("stationMaster")] // Define the inverse navigation property
