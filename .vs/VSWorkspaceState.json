@@ -1,7 +1,19 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     ""
   ],
   "SelectedNode": "\\Railway-Management-System.sln",
+=======
+    "",
+    "\\Railway-Management-System",
+    "\\Railway-Management-System\\Controllers",
+    "\\Railway-Management-System\\Models",
+    "\\Railway-Management-System\\Views",
+    "\\Railway-Management-System\\Views\\Home",
+    "\\Railway-Management-System\\Views\\Shared"
+  ],
+  "SelectedNode": "\\Railway-Management-System\\Models\\stationMaster.cs",
+>>>>>>> 2959436bc573cfed2ac115885cf46aad1a5a67b3
   "PreviewInSolutionExplorer": false
 }

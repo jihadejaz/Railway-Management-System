@@ -5,6 +5,7 @@
 
     Layout = "_LayoutAdmin";
 }
+
 <div class="main-content">
     <section class="section">
         <div class="row">
@@ -303,7 +304,8 @@
             <div class="col-md-6">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Top Countries</h4>
+                        <h4>Top Countrie</h4>
+                        <div class="d-sm-none d-lg-inline-block">@TempData.Peek("Data")</div>
                     </div>
                     <div class="card-body">
                         <div class="row">
