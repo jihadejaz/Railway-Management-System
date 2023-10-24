@@ -141,30 +141,27 @@ namespace Railway_Management_System.Controllers
         [HttpPost]
         public IActionResult Update_user(RMSpassengers rms)
         {
-            
 
-                if (ModelState.IsValid){
+
+            if (ModelState.IsValid)
+            {
 
                 data.Passengers.Update(rms);
                 data.SaveChanges();
 
                 ViewBag.success = "User Recorde Update success";
                 return RedirectToAction("show_user");
-                }
-                         
+            }
+
             return View();
-    
+
         }
-
-
 
         public IActionResult show_user()
         {
             var userdata = data.Passengers.ToList();
             return View(userdata);
         }
-
-
 
         public IActionResult delete_user(int id)
         {
