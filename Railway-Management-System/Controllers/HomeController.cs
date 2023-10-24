@@ -207,7 +207,7 @@ namespace Railway_Management_System.Controllers
                 data.SaveChanges();
 
                 TempData["msg"] = "Train Add Success";
-                ViewBag.msg = "Train Add Success";
+                ViewBag.msg = "Train Uploaded";
             }
 
             return View();
@@ -229,7 +229,7 @@ namespace Railway_Management_System.Controllers
                 data.StationMasters.Add(station);
                 data.SaveChanges();
 
-                ViewBag.msg = "Add Station Success";
+                ViewBag.msg = "Station Uploaded";
 
                return RedirectToAction("Add_station");
 			}
