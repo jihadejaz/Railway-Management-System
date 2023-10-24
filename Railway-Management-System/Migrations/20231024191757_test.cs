@@ -32,7 +32,7 @@ namespace Railway_Management_System.Migrations
                 {
                     stationId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    stationCode = table.Column<int>(type: "int", nullable: false),
+                    stationCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     stationName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     stationDivision = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -49,7 +49,7 @@ namespace Railway_Management_System.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     trainName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     status = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    routeId = table.Column<int>(type: "int", nullable: false),
+                    routeId = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     trainCategory = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>

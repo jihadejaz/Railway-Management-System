@@ -15,7 +15,7 @@ namespace Railway_Management_System.Models
 
     /*    [ForeignKey("stationMaster")] // Define the foreign key relationship*/
         [Required]
-        public int? routeId { get; set; }
+        public string routeId { get; set; }
 
         [Required]
         public string trainCategory { get; set; }

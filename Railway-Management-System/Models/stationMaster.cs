@@ -9,7 +9,7 @@ namespace Railway_Management_System.Models
         public int stationId { get; set; }
 
         [Required(ErrorMessage = "The station code field is required.")]
-        public int? stationCode { get; set; }
+        public string stationCode { get; set; }
         [Required]
         public string stationName { get; set; }
         [Required]
