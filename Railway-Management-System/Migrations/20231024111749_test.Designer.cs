@@ -12,8 +12,8 @@ using Railway_Management_System.Models;
 namespace Railway_Management_System.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20231024104343_test2")]
-    partial class test2
+    [Migration("20231024111749_test")]
+    partial class test
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -115,6 +115,15 @@ namespace Railway_Management_System.Controllers
             return View();
         }
 
+        public IActionResult trainTimings()
+        {
+            return View();
+        }
+
+        public IActionResult stationSchedule()
+        {
+            return View();
+        }
 
 
 
@@ -181,7 +190,7 @@ namespace Railway_Management_System.Controllers
 
             ViewBag.error = "User Recorde Delete success";
 
-            return RedirectToAction("show_user");
+            return RedirectToAction("Alluser", "AdminController");
         }
 
         public IActionResult Add_train()
