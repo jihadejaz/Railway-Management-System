@@ -1,10 +1,76 @@
-﻿@{
+﻿@model Railway_Management_System.Models.compositeModel
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 @* MAIN SECTION START *@
 
 <div class="container-fluid p-0">
+    <div class="container" style="background-color: darkgreen; border-radius: 15px;">
+        <div class="row">
+            <div class="col-md-6">
+                <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
+                    <div class="container p-5">
+                        <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
+                        <div class="container text-center mt-0 p-0">
+                            <span class="text-danger" asp-validation-for="selectTrain"></span>
+
+                            <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
+                                <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
+                                @if (Model.TrainMasters != null)
+                                {
+                                    @foreach (var train in Model.TrainMasters)
+                                    {
+                                        <option class="text-center" value="@train.trainName">@train.trainName</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <br />
+                        <div class="container text-center mt-0 p-0">
+                            <span class="text-danger" asp-validation-for="fromCity"></span>
+
+                            <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
+                                <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
+                                @if (Model.TrainMasters != null)
+                                {
+                                    @* var city = TempData["cityData"] as List<citiesAndStates>; *@
+                                    @foreach (var cityAndState in Model.CitiesAndStates)
+                                    {
+                                        <option class="text-center" value="@cityAndState.city">@cityAndState.city</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <br />
+                        <div class="container text-center mt-0 p-0">
+                            <span class="text-danger" asp-validation-for="toCity"></span>
+
+                            <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
+                                <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
+                                @if (Model.TrainMasters != null)
+                                {
+                                    @* var city = TempData["cityData"] as List<citiesAndStates>; *@
+                                    @foreach (var cityAndState in Model.CitiesAndStates)
+                                    {
+                                        <option class="text-center" value="@cityAndState.city">@cityAndState.city</option>
+                                    }
+                                }
+                            </select>
+                            <center><button class="button-64 mt-3" type="submit"> <span class="text">Calculate</span> </button></center>
+
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -43,21 +109,30 @@
 <div class="container-fluid mt-3" id="bookingSection">
     <h2 class="mt-1">Book Trains</h2>
     <hr />
-    <div class="row shadow-sm mt-lg-4">
-        <div class="col-md-4" >
-            <input class="form-control" placeholder="From" id="bookingField" />
+    <form method="post" asp-action="searchTrain">
+        <div class="row shadow-sm mt-lg-4">
+            <div class="col-md-4">
+                <input class="form-control" asp-for="from" placeholder="From" id="bookingField" />
+                <span class="text-danger" asp-validation-for="from"></span>
+
+            </div>
+            <div class="col-md-4">
+                <input class="form-control" asp-for="to" placeholder="To" id="bookingField" />
+                <span class="text-danger" asp-validation-for="to"></span>
+
+            </div>
+            <div class="col-md-4">
+                <input type="date" class="form-control" asp-for="trainDate" id="bookingField" />
+                <span class="text-danger" asp-validation-for="trainDate"></span>
+
+            </div>
+
         </div>
-        <div class="col-md-4">
-            <input class="form-control" placeholder="To" id="bookingField" />
+        <div class="container mt-lg-4 text-center">
+            <button class="btn btn-primary" id="authBtn" type="submit">Search</button>
         </div>
-        <div class="col-md-4">
-            <input type="date" class="form-control" id="bookingField" />
-        </div>
-        
-    </div>
-    <div class="container mt-lg-4 text-center">
-        <a class="btn btn-primary" id="authBtn">Search</a>
-    </div>
+    </form>
+   
 </div>
 
 @* BOOKINGS END *@

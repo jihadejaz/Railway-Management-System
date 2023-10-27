@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@model Railway_Management_System.Models.compositeModel
+
+@{
+    ViewBag.TrainData = Model; // Pass the model data to ViewBag
+
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -11,6 +18,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
+
 <body>
     <header>
         <nav class="navbar navbar-expand-sm bg-white p-2" id="navBg">
@@ -48,6 +56,12 @@
                     </ul>
                 </div>
 
+            
+
+
+
+
+
 
             </div>
         </nav>
@@ -78,9 +92,9 @@
                         }
                         else
                         {
-                            <button class="btn btn-outline-light btn-sm">Welcome onboard, 
+                            <a asp-action="passengerBooking" class="btn btn-outline-light btn-sm">Welcome, 
                                 @Context.Request.HttpContext.Session.GetString("userName")
-                            </button>
+                            </a>
 
                         }
                         <a href style="font-weight: 500; border-right: solid white 1px;" class="nav-item nav-link p-2">
@@ -99,34 +113,94 @@
                     </div>
                     <hr />
 
-                    <form method="POST" enctype="multipart/form-data" asp-action="">
-                        <div class="container p-0">
-                            <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
-                            <div class="container text-center mt-0 p-0">
-                                <select class="form-control bg-light btn-block" id="fareDropdown" >
-                                    <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
-                                    <option class="text-center">Agra Express</option>
-                                </select>
-                            </div>
-                            <br />
-                            <div class="container text-center mt-0 p-0">
-                                <select class="form-control bg-light btn-block" id="fareDropdown">
-                                    <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
-                                    <option class="text-center">New Delhi</option>
-                                </select>
-                            </div>
-                            <br />
-                            <div class="container text-center mt-0 p-0">
-                                <select class="form-control bg-light btn-block" id="fareDropdown">
-                                    <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
-                                    <option class="text-center">Mumbai</option>
-                                </select>
-                                <center><button class="button-64 mt-3" role="button"> <span class="text">Calculate</span> </button></center>
+
+                    <div class="container">
+                        <form method="post" asp-action="bookAticket">
+                            <div class="row shadow-sm mt-lg-4 text-center">
+                                <div class="form-group">
+                                    <label for="" >Passenger Name</label>
+
+                                    <input class="form-control" id="fareDropdown" asp-for="passengerName" placeholder="Passenger Name" />
+                                    <span class="text-danger" asp-validation-for="passengerName"></span>
+
+                                </div>
+                                <hr />
 
 
+                                <div class="form-group">
+                                    <label for="">Passenger Age</label>
+
+                                    <input class="form-control" id="fareDropdown" type="date" asp-for="age" placeholder="Passenger Age" id="bookingField" />
+                                    <span class="text-danger" asp-validation-for="age"></span>
+
+                                </div>
+                                <hr />
+
+
+                                <div class="form-group">
+                                    <label for="male">Male</label>
+                                    <input type="radio"  value="Male" placeholder="Specify Gender" asp-for="gender" id="male" />
+                                    <label for="female">Female</label>
+
+                                    <input type="radio"  value="Female" placeholder="Specify Gender" asp-for="gender" id="female" />
+                                    <span class="text-danger" asp-validation-for="gender"></span>
+
+                                </div>
+                                <hr />
+
+
+                                <div class="form-group">
+                                    <label for="">Total Passengers</label>
+
+                                    <input type="number" min="1" placeholder="Total Passengers" id="fareDropdown" class="form-control" asp-for="totalPassengers" />
+                                    <span class="text-danger" asp-validation-for="totalPassengers"></span>
+
+                                </div>
+                                <hr />
+
+
+                                <div class="form-group">
+                                    <label for="">Departure Date</label>
+
+                                    <input type="date" id="fareDropdown" class="form-control" asp-for="dateOfTravel" />
+                                    <span class="text-danger" asp-validation-for="dateOfTravel"></span>
+
+                                </div>
+                                <hr />
+
+                                <div class="form-group">
+                                    <label for="">Select Train</label>
+                                    <br />
+                                    <center>
+                                        <select asp-for="trainCategory" id="fareDropdown">
+                                            <option>-----Select Category-----</option>
+
+                                            <option>1AC</option>
+                                            <option>2AC</option>
+                                            <option>3AC</option>
+                                            <option>Sleeper</option>
+                                            <option>General</option>
+                                        </select>
+                                    </center>
+
+                                </div>
+                                <hr />
+
+                                <div class="form-group">
+                                    <input type="number" id="fareDropdown" class="form-control" asp-for="trainNumber" />
+                                    <span class="text-danger" asp-validation-for="trainNumber"></span>
+
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                            <div class="container mt-lg-4 text-center">
+                                <button class="btn btn-primary" id="authBtn" type="submit">Confirm</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    
+
+                    
 
                 </div>
 

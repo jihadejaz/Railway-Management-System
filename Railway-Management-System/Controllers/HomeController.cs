@@ -18,8 +18,64 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Index()
         {
+            var cities = data.citiesAndStates.ToList();
+            var train = data.TrainMasters.ToList();
+
+            var populatedModel = new compositeModel
+            {
+                CitiesAndStates = cities,
+                TrainMasters = train,
+
+            };
+
+
+            return View(populatedModel);
+        }
+
+        [HttpPost]
+        public IActionResult CalculateFare(compositeModel model)
+        {
+
+          
+            return View("FareCalculateResult", model);
+        }
+
+
+        public IActionResult fareCalculateResult()
+        {
             return View();
         }
+
+        [HttpPost]
+
+        public IActionResult searchTrain()
+        {
+            if(!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
+            return View("Index");
+        }
+
+        public IActionResult passengerBooking()
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
+
+            return View("Index");
+        }
+
+
+        //public IActionResult _Layout()
+        //{
+        //    var trainData = data.TrainMasters.ToList();
+        //    TempData["TrainData"] = trainData;
+
+        //    return View();
+        //}
 
         public IActionResult Privacy()
         {
@@ -134,8 +190,15 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Admin()
         {
+            if(string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
+
             var user = data.Passengers.Count();
             ViewBag.user = user;
+            ViewBag.error = "Sign in First";
+
 
             return View(user);
         }
@@ -149,6 +212,10 @@ namespace Railway_Management_System.Controllers
        
         public IActionResult Update_user(int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
             var update = data.Passengers.Find(id);
 
             return View(update);
@@ -178,12 +245,21 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult show_user()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
             var userdata = data.Passengers.ToList();
             return View(userdata);
         }
 
         public IActionResult delete_user(int id)
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
+
             var delete = data.Passengers.Find(id);
             data.Passengers.Remove(delete);
             data.SaveChanges();
@@ -195,12 +271,18 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Add_train()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult Add_train(trainMaster train)
+        public IActionResult Add_train([Bind("trainName, status, routeCode, compartmentNo, trainCategory, departureTime, trainType")] trainMaster train)
         {
+            
             if (ModelState.IsValid)
             {
                 data.TrainMasters.Add(train);
@@ -216,6 +298,10 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Add_station()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            {
+                return View("Signin");
+            }
 
             return View();
         }
@@ -266,6 +352,10 @@ namespace Railway_Management_System.Controllers
 
             return RedirectToAction("Admin_profile");
         }
+
+        //CACULATE FARE METHOD 
+
+        
 
 
 

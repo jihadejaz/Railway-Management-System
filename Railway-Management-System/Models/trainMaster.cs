@@ -12,15 +12,20 @@ namespace Railway_Management_System.Models
 
         [Required(ErrorMessage = "The status field is required.")]
         public string status { get; set; }
-
-    /*    [ForeignKey("stationMaster")] // Define the foreign key relationship*/
         [Required]
-        public string routeId { get; set; }
+
+        public DateTime departureTime { get; set; }
+        [Required]
+
+        public int compartmentNo { get; set; }
+        [Required]
+
+        public string trainType {  get; set; }
+        [Required]
+        public string routeCode { get; set; }
 
         [Required]
         public string trainCategory { get; set; }
 
-
-    /*    public stationMaster stationMaster { get; set; } // Navigation property*/
     }
 }

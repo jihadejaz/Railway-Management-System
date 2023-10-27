@@ -11,14 +11,14 @@
 <div class="main-content">
     <section class="section">
         <h2 class="section-title">Add a New Train</h2>
-        
+
 
         <div class="row">
             <div class="col-12 col-md-12 col-lg-12">
                 <form asp-action="Add_train" method="post">
-        
+
                     <div class="card">
-                      
+
                         <div class="card-header">
                             <span class="text-success">@ViewBag.msg</span>
 
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <label>Train Name</label>
                                 <br />
-                            <span class="text-danger" asp-validation-for="trainName"></span>
+                                <span class="text-danger" asp-validation-for="trainName"></span>
                                 <input type="text" asp-for="trainName" class="form-control">
                             </div>
 
@@ -35,7 +35,7 @@
                             <br />
                             <span class="text-danger" asp-validation-for="status"></span>
                             <select asp-for="status" class="form-control" style="width: 100%; margin-right: 10px;">
-        
+
                                 <option class="form-control  text-danger" value="">
                                     Select Status :
                                 </option>
@@ -43,26 +43,47 @@
                                 <option>Down</option>
                             </select>
                             <br />
+
+                         
+
+
                             <div class="form-group">
-                                <label>Route Id</label>
+                                <label>Route Code</label>
                                 <br />
-                                <span class="text-danger" asp-validation-for="routeId"></span>
+                                <span class="text-danger" asp-validation-for="routeCode"></span>
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <i class="fa fa-train"></i>
                                         </div>
                                     </div>
-                                    <input type="text" asp-for="routeId" class="form-control" >
+                                    <input type="text" asp-for="routeCode" class="form-control">
                                 </div>
 
                             </div>
+
+                            <div class="form-group">
+                                <label>No. fo Compartment</label>
+                                <br />
+                                <span class="text-danger" asp-validation-for="compartmentNo"></span>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-seat"></i>
+                                        </div>
+                                    </div>
+                                    <input type="text" asp-for="compartmentNo" class="form-control">
+                                </div>
+
+                            </div>
+
+
                             <div class="form-group">
                                 <label>Category</label>
                                 <br />
-                                    <span class="text-danger" asp-validation-for="trainCategory"></span>
-        
-                                    <div class="input-group">
+
+                                <span class="text-danger" asp-validation-for="trainCategory"></span>
+                                <div class="input-group">
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">
                                             <i class="fas fa-lock"></i>
@@ -73,6 +94,40 @@
 
                             </div>
 
+                            <div class="form-group">
+                                <label>Departure Time</label>
+                                <br />
+
+                                <span class="text-danger" asp-validation-for="departureTime"></span>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <i class="fa fa-calender"></i>
+                                        </div>
+                                    </div>
+                                    <input type="date" asp-for="departureTime" class="form-control" data-indicator="pwindicator">
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <span class="text-danger" asp-validation-for="trainType"></span>
+
+                                <label>Type</label>
+                                <br />
+
+                                <div class="input-group">
+                                    
+                                    <select asp-for="trainType">
+                                        <option>-----Select Type-----</option>
+
+                                        <option>1AC</option>
+                                        <option>2AC</option>
+                                        <option>3AC</option>
+                                    </select>
+                                </div>
+
+                            </div>
 
                             <div class="form-group">
 
