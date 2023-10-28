@@ -55,6 +55,14 @@
                                 <a class="nav-link text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
                             </li>
                         }
+                        @if (!string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-black" href="user_logout" style="font-weight: 400;">Logout</a>
+                            </li>
+                        }
+
+                        
                     </ul>
                 </div>
 

@@ -120,6 +120,7 @@ namespace Railway_Management_System.Controllers
                     data.Passengers.Update(existingUser);
                     data.SaveChanges();
                     ViewBag.success = "Record Updated Successfully";
+                    HttpContext.Session.SetString("userName", passengers.User_name);
 
                     fetch_train();
                     return View("Signup");
@@ -131,6 +132,7 @@ namespace Railway_Management_System.Controllers
                     data.Passengers.Add(passengers);
                     data.SaveChanges();
                     fetch_train();
+                    HttpContext.Session.SetString("userName", passengers.User_name);
 
                 }
                 return View("Signup");
@@ -188,6 +190,16 @@ namespace Railway_Management_System.Controllers
             return View();
         }
 
+        public IActionResult user_logout()
+        {
+            if (HttpContext.Session.GetString("userName") != null)
+            {
+                HttpContext.Session.Remove("userName");
+                return RedirectToAction("Index");
+            }
+            return RedirectToAction("Index");
+        }
+
         public IActionResult trainTimings()
         {
             return View();
@@ -207,7 +219,7 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Admin()
         {
-            if(string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("admin")))
             {
                 return View("Signin");
             }
@@ -370,9 +382,22 @@ namespace Railway_Management_System.Controllers
             return RedirectToAction("Admin_profile");
         }
 
+
+        public IActionResult admin_logout()
+        {
+            if(HttpContext.Session.GetString("admin")!=null)
+            {
+                HttpContext.Session.Remove("admin");
+                return RedirectToAction("Index");
+            }
+
+            return RedirectToAction("Admin");
+
+        }
+
         //CACULATE FARE METHOD 
 
-        
+
 
 
 
