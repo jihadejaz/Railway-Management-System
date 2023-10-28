@@ -22,7 +22,9 @@ namespace Railway_Management_System.Controllers
         {
 
             var train = data.TrainMasters.ToList();
-            ViewData["UserData"] = train;
+            var city = data.citiesAndStates.ToList();
+            ViewData["Train"] = train;
+            ViewData["City"] = city;
         }
 
 
@@ -30,8 +32,10 @@ namespace Railway_Management_System.Controllers
         {
             var cities = data.citiesAndStates.ToList();
             var train = data.TrainMasters.ToList();
-            ViewData["UserData"] = train;
+            ViewData["Train"] = train;
+            ViewData["City"] = cities;
 
+ 
             var populatedModel = new compositeModel
             {
                 CitiesAndStates = cities,
@@ -190,9 +194,10 @@ namespace Railway_Management_System.Controllers
             return View();
         }
 
+        [HttpGet]
         public IActionResult user_logout()
         {
-            if (HttpContext.Session.GetString("userName") != null)
+            if (HttpContext.Session.GetString("userName")!= null)
             {
                 HttpContext.Session.Remove("userName");
                 return RedirectToAction("Index");
@@ -207,6 +212,12 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult stationSchedule()
         {
+            return View();
+        }
+
+        public IActionResult userprofile()
+        {
+
             return View();
         }
 

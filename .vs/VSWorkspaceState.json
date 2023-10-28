@@ -7,6 +7,6 @@
     "\\Railway-Management-System\\Views\\Home",
     "\\Railway-Management-System\\Views\\Shared"
   ],
-  "SelectedNode": "\\Railway-Management-System\\Views\\Home\\Admin.cshtml",
+  "SelectedNode": "\\Railway-Management-System\\Controllers\\HomeController.cs",
   "PreviewInSolutionExplorer": false
 }

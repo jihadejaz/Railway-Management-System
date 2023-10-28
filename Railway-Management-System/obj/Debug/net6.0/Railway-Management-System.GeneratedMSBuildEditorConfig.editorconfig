@@ -9,89 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Railway_Management_System
 build_property.RootNamespace = Railway_Management_System
-build_property.ProjectDir = C:\Users\MUHAMMAD BIN EJAZ\source\repos\Railway-Management-System\Railway-Management-System\
+build_property.ProjectDir = C:\Users\sheikh hussain\Pictures\Railway-Management-System\Railway-Management-System\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\MUHAMMAD BIN EJAZ\source\repos\Railway-Management-System\Railway-Management-System
+build_property.MSBuildProjectDirectory = C:\Users\sheikh hussain\Pictures\Railway-Management-System\Railway-Management-System
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Admin/Alluser.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Admin/Alluser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWxsdXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Add_station.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Add_station.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRfc3RhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Add_train.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Add_train.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZGRfdHJhaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Admin.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Admin_profile.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Admin_profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pbl9wcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/fareCalculateResult.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/fareCalculateResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxmYXJlQ2FsY3VsYXRlUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Index.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Privacy.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/show_user.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/show_user.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzaG93X3VzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Signin.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Signin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWduaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/Signup.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/stationSchedule.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/stationSchedule.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzdGF0aW9uU2NoZWR1bGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/trainTimings.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/trainTimings.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx0cmFpblRpbWluZ3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Home/update_user.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/update_user.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx1cGRhdGVfdXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Shared/Error.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Home/userprofile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVx1c2VycHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Shared/_LayoutAdmin.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Shared/_LayoutAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/_ViewImports.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/_ViewStart.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/MUHAMMAD BIN EJAZ/source/repos/Railway-Management-System/Railway-Management-System/Views/Shared/_Layout.cshtml]
+[C:/Users/sheikh hussain/Pictures/Railway-Management-System/Railway-Management-System/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-lbdjsyr92q
