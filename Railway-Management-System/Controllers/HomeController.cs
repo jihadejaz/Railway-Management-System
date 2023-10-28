@@ -10,16 +10,27 @@ namespace Railway_Management_System.Controllers
     public class HomeController : Controller
     {
         private MyDbContext data;
+
         public HomeController(MyDbContext myDbContext)
         {
             data = myDbContext;
-
+           
+            
         }
+
+        public void fetch_train()
+        {
+
+            var train = data.TrainMasters.ToList();
+            ViewData["UserData"] = train;
+        }
+
 
         public IActionResult Index()
         {
             var cities = data.citiesAndStates.ToList();
             var train = data.TrainMasters.ToList();
+            ViewData["UserData"] = train;
 
             var populatedModel = new compositeModel
             {
@@ -28,6 +39,9 @@ namespace Railway_Management_System.Controllers
 
             };
 
+          
+
+
 
             return View(populatedModel);
         }
@@ -35,14 +49,18 @@ namespace Railway_Management_System.Controllers
         [HttpPost]
         public IActionResult CalculateFare(compositeModel model)
         {
-
-          
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
             return View("FareCalculateResult", model);
+          
         }
 
 
         public IActionResult fareCalculateResult()
         {
+           
             return View();
         }
 
@@ -69,14 +87,7 @@ namespace Railway_Management_System.Controllers
         }
 
 
-        //public IActionResult _Layout()
-        //{
-        //    var trainData = data.TrainMasters.ToList();
-        //    TempData["TrainData"] = trainData;
-
-        //    return View();
-        //}
-
+   
         public IActionResult Privacy()
         {
             return View();
@@ -84,6 +95,7 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Signup()
         {
+            fetch_train();
 
             return View();
         }
@@ -95,6 +107,7 @@ namespace Railway_Management_System.Controllers
 
             if (!ModelState.IsValid)
             {
+                fetch_train();
                 return View("Signup");
             }
             else
@@ -108,6 +121,7 @@ namespace Railway_Management_System.Controllers
                     data.SaveChanges();
                     ViewBag.success = "Record Updated Successfully";
 
+                    fetch_train();
                     return View("Signup");
                 }
                 else
@@ -116,6 +130,7 @@ namespace Railway_Management_System.Controllers
                     passengers.Password = "rms123"; // Update the password as needed
                     data.Passengers.Add(passengers);
                     data.SaveChanges();
+                    fetch_train();
 
                 }
                 return View("Signup");
@@ -126,7 +141,7 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult Signin()
         {
-
+            fetch_train();
             return View();
         }
 
@@ -160,11 +175,13 @@ namespace Railway_Management_System.Controllers
                 }
                 else
                 {
+                    fetch_train();
                     ViewBag.error = "Incorrect Username or Password";
                 }
             }
             else
             {
+                fetch_train();
                 ViewBag.error = "User not found"; // Adjust the error message as needed
             }
 

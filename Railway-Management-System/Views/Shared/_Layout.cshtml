@@ -1,7 +1,9 @@
 ﻿@model Railway_Management_System.Models.compositeModel
 
+
 @{
     ViewBag.TrainData = Model; // Pass the model data to ViewBag
+    var userData = ViewData["UserData"] as List<trainMaster>;
 
 }
 
@@ -111,7 +113,55 @@
                             File a complaint
                         </button>
                     </div>
-                    <hr />
+
+
+                    <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
+                        <div class="container-fluid p-5">
+                            <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
+                           
+
+                            <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
+                                    <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
+                                @if (userData != null && userData.Any())
+                                {
+                                    @foreach (var passenger in userData)
+                                    {
+                                        <option class="text-center"><i class="fab fa-arrow-down"></i>@passenger.trainName</option>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <p>No data available.</p>
+                                }
+
+                                </select>
+                                <span class="text-danger" asp-validation-for="selectTrain"></span>
+                           
+                            <br />
+                           
+
+                                <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
+                                    <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
+                                <option>options</option>
+                                </select>
+                           
+                                <span class="text-danger" asp-validation-for="fromCity"></span>
+                            <br />
+                           
+
+                                <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
+                                    <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
+                                    <option>options</option>
+                                </select>
+                                <span class="text-danger" asp-validation-for="toCity"></span>
+                            <div class="container mt-lg-4 text-center">
+                                <button class="btn btn-primary" id="authBtn" type="submit">Confirm</button>
+                            </div>
+
+
+                        </div>
+                    </form>
 
 
                     <div class="container">
@@ -143,6 +193,7 @@
                                     <label for="female">Female</label>
 
                                     <input type="radio"  value="Female" placeholder="Specify Gender" asp-for="gender" id="female" />
+                                    <br/>
                                     <span class="text-danger" asp-validation-for="gender"></span>
 
                                 </div>
