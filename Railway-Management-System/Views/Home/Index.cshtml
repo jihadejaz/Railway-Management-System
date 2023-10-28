@@ -11,7 +11,7 @@
     <div class="container" style="background-color: darkgreen; border-radius: 15px;">
         <div class="row">
             <div class="col-md-6">
-                <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
+                @*  <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
                     <div class="container p-5">
                         <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
                         <div class="container text-center mt-0 p-0">
@@ -19,13 +19,7 @@
 
                             <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
                                 <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
-                                @if (Model.TrainMasters != null)
-                                {
-                                    @foreach (var train in Model.TrainMasters)
-                                    {
-                                        <option class="text-center" value="@train.trainName">@train.trainName</option>
-                                    }
-                                }
+                               
                             </select>
                         </div>
                         <br />
@@ -34,13 +28,7 @@
 
                             <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
                                 <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
-                                @if (Model.TrainMasters != null)
-                                {
-                                    @* var city = TempData["cityData"] as List<citiesAndStates>; *@
-                                    @foreach (var cityAndState in Model.CitiesAndStates)
-                                    {
-                                        <option class="text-center" value="@cityAndState.city">@cityAndState.city</option>
-                                    }
+                                }
                                 }
                             </select>
                         </div>
@@ -50,21 +38,14 @@
 
                             <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
                                 <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
-                                @if (Model.TrainMasters != null)
-                                {
-                                    @* var city = TempData["cityData"] as List<citiesAndStates>; *@
-                                    @foreach (var cityAndState in Model.CitiesAndStates)
-                                    {
-                                        <option class="text-center" value="@cityAndState.city">@cityAndState.city</option>
-                                    }
-                                }
+                               
                             </select>
                             <center><button class="button-64 mt-3" type="submit"> <span class="text">Calculate</span> </button></center>
 
 
                         </div>
                     </div>
-                </form>
+                </form>  *@
             </div>
         </div>
     </div>
