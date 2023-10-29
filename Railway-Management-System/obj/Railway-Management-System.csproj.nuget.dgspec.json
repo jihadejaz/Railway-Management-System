@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\MUHAMMAD BIN EJAZ\\source\\repos\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\MUHAMMAD BIN EJAZ\\source\\repos\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj",
         "packagesPath": "C:\\Users\\MUHAMMAD BIN EJAZ\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\MUHAMMAD BIN EJAZ\\source\\repos\\Railway-Management-System\\Railway-Management-System\\obj\\",
+=======
+    "C:\\Users\\sheikh hussain\\Pictures\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\sheikh hussain\\Pictures\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\sheikh hussain\\Pictures\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj",
+        "projectName": "Railway-Management-System",
+        "projectPath": "C:\\Users\\sheikh hussain\\Pictures\\Railway-Management-System\\Railway-Management-System\\Railway-Management-System.csproj",
+        "packagesPath": "C:\\Users\\sheikh hussain\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sheikh hussain\\Pictures\\Railway-Management-System\\Railway-Management-System\\obj\\",
+>>>>>>> 696189307d6cd940f8e5f7b29152f90e606374e5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\MUHAMMAD BIN EJAZ\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\sheikh hussain\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 696189307d6cd940f8e5f7b29152f90e606374e5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -87,7 +105,11 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+>>>>>>> 696189307d6cd940f8e5f7b29152f90e606374e5
         }
       }
     }

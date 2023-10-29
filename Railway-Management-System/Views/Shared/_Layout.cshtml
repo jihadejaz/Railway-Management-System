@@ -3,7 +3,8 @@
 
 @{
     ViewBag.TrainData = Model; // Pass the model data to ViewBag
-    var userData = ViewData["UserData"] as List<trainMaster>;
+    var Train = ViewData["Train"] as List<trainMaster>;
+    var City = ViewData["City"] as List<citiesAndStates>;
 
 }
 
@@ -33,16 +34,16 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav mx-lg-5 justify-content-between" id="mobileNavlinkMargin">
                         <li class="nav-item">
-                            <a class="nav-link text-black" asp-action="Index" style="font-weight: 400;">Home</a>
+                            <a class="nav-link ms-3 text-black" asp-action="Index" style="font-weight: 400;">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" href="#" style="font-weight: 400;">Gallery</a>
+                            <a class="nav-link  ms-3  text-black" href="#" style="font-weight: 400;">Gallery</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-black" href="#" style="font-weight: 400;">Privacy Policy</a>
+                            <a class="nav-link ms-3   text-black" href="#" style="font-weight: 400;">Privacy Policy</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight: 400;">Dropdown</a>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link ms-3 dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" style="font-weight: 400;">Dropdown</a>
                             <ul class="dropdown-menu" id="dropdownBg">
                                 <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">Link</a></li>
                                 <li><a class="dropdown-item text-black" id="dropdownLink" href="#" style="font-weight: 400;">Another link</a></li>
@@ -52,16 +53,24 @@
                         @if (string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
+                                <a class="nav-link  ms-3  text-black" asp-action="Signup" style="font-weight: 400;">Sign up</a>
                             </li>
                         }
                         @if (!string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-black" href="user_logout" style="font-weight: 400;">Logout</a>
+                                <a class="nav-link  ms-3 text-black" asp-action="user_logout" style="font-weight: 400;">Logout</a>
                             </li>
                         }
 
+                        @if (!string.IsNullOrEmpty(Context.Request.HttpContext.Session.GetString("userName")))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link  ms-3 text-black" asp-action="userprofile" style="font-weight: 400;">Profile</a>
+                            </li>
+                        }
+
+                       
                         
                     </ul>
                 </div>
@@ -130,9 +139,9 @@
 
                             <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
                                     <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
-                                @if (userData != null && userData.Any())
+                                @if (Train != null && Train.Any())
                                 {
-                                    @foreach (var passenger in userData)
+                                    @foreach (var passenger in Train)
                                     {
                                         <option class="text-center"><i class="fab fa-arrow-down"></i>@passenger.trainName</option>
                                     }
@@ -151,7 +160,18 @@
 
                                 <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
                                     <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
-                                <option>options</option>
+                                @if (City != null && City.Any())
+                                {
+                                    @foreach (var city in City)
+                                    {
+                                        <option class="text-center"><i class="fab fa-arrow-down"></i>@city.city</option>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <p>No data available.</p>
+                                }
                                 </select>
                            
                                 <span class="text-danger" asp-validation-for="fromCity"></span>
