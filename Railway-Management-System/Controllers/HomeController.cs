@@ -39,10 +39,6 @@ namespace Railway_Management_System.Controllers
 
             };
 
-          
-
-
-
             return View(populatedModel);
         }
 
