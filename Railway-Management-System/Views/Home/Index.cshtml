@@ -8,50 +8,10 @@
 @* MAIN SECTION START *@
 
 <div class="container-fluid p-0">
-    <div class="container" style="background-color: darkgreen; border-radius: 15px;">
-        <div class="row">
-            <div class="col-md-6">
-                @*  <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
-                    <div class="container p-5">
-                        <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
-                        <div class="container text-center mt-0 p-0">
-                            <span class="text-danger" asp-validation-for="selectTrain"></span>
-
-                            <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
-                                <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
-                               
-                            </select>
-                        </div>
-                        <br />
-                        <div class="container text-center mt-0 p-0">
-                            <span class="text-danger" asp-validation-for="fromCity"></span>
-
-                            <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
-                                <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
-                                }
-                                }
-                            </select>
-                        </div>
-                        <br />
-                        <div class="container text-center mt-0 p-0">
-                            <span class="text-danger" asp-validation-for="toCity"></span>
-
-                            <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
-                                <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
-                               
-                            </select>
-                            <center><button class="button-64 mt-3" type="submit"> <span class="text">Calculate</span> </button></center>
-
-
-                        </div>
-                    </div>
-                </form>  *@
-            </div>
-        </div>
-    </div>
-
-    
-
+    @if (TempData["error"] != null)
+    {
+        <div class="alert alert-danger">@TempData["error"]</div>
+    }
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
@@ -88,9 +48,12 @@
 @* BOOKINGS START *@
 
 <div class="container-fluid mt-3" id="bookingSection">
+  
+
     <h2 class="mt-1">Book Trains</h2>
     <hr />
-    <form method="post" asp-action="searchTrain">
+  
+    <form method="post" asp-action="searchTrain" asp-for="searchTrain">
         <div class="row shadow-sm mt-lg-4">
             <div class="col-md-4">
                 <input class="form-control" asp-for="from" placeholder="From" id="bookingField" />
@@ -140,7 +103,7 @@
         <div id="home" class="container tab-pane active">
             <br>
             <div class="container mt-3 p-0">
-                <h2>From Mumbai (MMCT)</h2>
+                <center><h2>From Mumbai (MMCT)</h2></center>
                 <hr />
                 <div class="table-responsive">
                     <table class="table table-hover">

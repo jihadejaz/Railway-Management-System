@@ -7,7 +7,11 @@
 @model Railway_Management_System.Models.RMSpassengers;
 
 <div class="container-fluid p-0">
-    <span class="text-white bg-danger p-0">@ViewBag.error</span>
+    @if (TempData["error"] != null)
+    {
+    <span class="text-white bg-danger p-1">@TempData["error"]</span>
+        
+    }
 
     <form asp-action="Signin" method="post">
         <div class="mb-3 mt-3">

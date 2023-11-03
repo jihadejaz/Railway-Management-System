@@ -47,13 +47,14 @@ namespace Railway_Management_System.Controllers
         }
 
         [HttpPost]
-        public IActionResult CalculateFare(compositeModel model)
+        public IActionResult CalculateFare([Bind("selectTrain", "fromCity", "toCity")] compositeModel trainData)
         {
             if (!ModelState.IsValid)
             {
-                return View("Index");
+                return RedirectToAction("Index");
             }
-            return View("FareCalculateResult", model);
+
+            return View("FareCalculateResult", trainData);
           
         }
 
@@ -66,28 +67,58 @@ namespace Railway_Management_System.Controllers
 
         [HttpPost]
 
-        public IActionResult searchTrain()
+        public IActionResult searchTrain([Bind("from","to", "trainDate")] compositeModel trainSearch)
         {
             if(!ModelState.IsValid)
             {
-                return View("Index");
+                ViewBag.error = "All fields required";
+                return RedirectToAction("Index");
             }
 
             return View("Index");
         }
+
+        [HttpPost]
+        public ActionResult bookAticket([Bind("passengerName, age, gender, totalPassengers, dateOfTravel, trainCategory, trainNumber")] passengersBooking booking)
+        {
+
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+            {
+                TempData["error"] = "Sign in for booking";
+
+                return View("Signin");
+
+            }
+
+            if (!ModelState.IsValid)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                data.passengerBooking.Add(booking);
+                data.SaveChanges();
+
+                TempData["msg"] = "Booking Confirmed";
+                return View("Index");
+
+            }
+
+        }
+
 
         public IActionResult passengerBooking()
         {
             if (!ModelState.IsValid)
             {
-                return View("Index");
+                return RedirectToAction("Index");
             }
 
             return View("Index");
         }
 
 
-   
+
         public IActionResult Privacy()
         {
             return View();
@@ -213,6 +244,13 @@ namespace Railway_Management_System.Controllers
 
         public IActionResult userprofile()
         {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+            {
+                ViewBag.error = "Access Denied, Signin First";
+
+                return View("Signin");
+
+            }
 
             return View();
         }

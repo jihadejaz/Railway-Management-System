@@ -80,11 +80,13 @@ namespace Railway_Management_System.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PNR_no"));
 
-                    b.Property<int>("age")
-                        .HasColumnType("int");
+                    b.Property<string>("age")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("dateOfTravel")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("dateOfTravel")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("gender")
                         .IsRequired()

@@ -70,12 +70,12 @@
                             </li>
                         }
 
-                       
-                        
+
+
                     </ul>
                 </div>
 
-            
+
 
 
 
@@ -111,7 +111,8 @@
                         }
                         else
                         {
-                            <a asp-action="passengerBooking" class="btn btn-outline-light btn-sm">Welcome, 
+                            <a asp-action="passengerBooking" class="btn btn-outline-light btn-sm">
+                                Welcome,
                                 @Context.Request.HttpContext.Session.GetString("userName")
                             </a>
 
@@ -135,10 +136,10 @@
                     <form method="POST" enctype="multipart/form-data" asp-action="calculateFare">
                         <div class="container-fluid p-5">
                             <h3 class="text-center text-light" mt-1" id="">Calculate Fare</h3>
-                           
+
 
                             <select class="form-control bg-light btn-block" asp-for="selectTrain" id="fareDropdown">
-                                    <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
+                                <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
                                 @if (Train != null && Train.Any())
                                 {
                                     @foreach (var passenger in Train)
@@ -152,14 +153,11 @@
                                     <p>No data available.</p>
                                 }
 
-                                </select>
-                                <span class="text-danger" asp-validation-for="selectTrain"></span>
-                           
+                            </select>
+                            <span class="text-danger" asp-validation-for="selectTrain"></span>
                             <br />
-                           
-
-                                <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
-                                    <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
+                            <select class="form-control bg-light btn-block" asp-for="fromCity" id="fareDropdown">
+                                <option class="text-center">----From----<i class="fab fa-arrow-down"></i></option>
                                 @if (City != null && City.Any())
                                 {
                                     @foreach (var city in City)
@@ -172,19 +170,30 @@
                                 {
                                     <p>No data available.</p>
                                 }
-                                </select>
-                           
-                                <span class="text-danger" asp-validation-for="fromCity"></span>
-                            <br />
-                           
+                            </select>
 
-                                <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
-                                    <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
-                                    <option>options</option>
-                                </select>
-                                <span class="text-danger" asp-validation-for="toCity"></span>
+                            <span class="text-danger" asp-validation-for="fromCity"></span>
+                            <br />
+
+
+                            <select class="form-control bg-light btn-block" asp-for="toCity" id="fareDropdown">
+                                <option class="text-center">----To----<i class="fab fa-arrow-down"></i></option>
+                                @if (City != null && City.Any())
+                                {
+                                    @foreach (var city in City)
+                                    {
+                                        <option class="text-center"><i class="fab fa-arrow-down"></i>@city.city</option>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <p>No data available.</p>
+                                }
+                            </select>
+                            <span class="text-danger" asp-validation-for="toCity"></span>
                             <div class="container mt-lg-4 text-center">
-                                <button class="btn btn-primary" id="authBtn" type="submit">Confirm</button>
+                                <button class="btn btn-primary" id="authBtn" type="submit">Calculate</button>
                             </div>
 
 
@@ -193,80 +202,96 @@
 
 
                     <div class="container">
-                        <form method="post" asp-action="bookAticket">
+                        <h3 class="text-center text-light" mt-1" id="">Book Your Ticket</h3>
+
+                        <form method="post" asp-action="bookAticket" enctype="multipart/form-data">
                             <div class="row shadow-sm mt-lg-4 text-center">
                                 <div class="form-group">
-                                    <label for="" >Passenger Name</label>
+                                    <label for="" class="text-white">Passenger Name</label>
 
                                     <input class="form-control" id="fareDropdown" asp-for="passengerName" placeholder="Passenger Name" />
                                     <span class="text-danger" asp-validation-for="passengerName"></span>
 
                                 </div>
-                                <hr />
-
 
                                 <div class="form-group">
-                                    <label for="">Passenger Age</label>
+                                    <label for="" class="text-white">Passenger Age</label>
 
                                     <input class="form-control" id="fareDropdown" type="date" asp-for="age" placeholder="Passenger Age" id="bookingField" />
                                     <span class="text-danger" asp-validation-for="age"></span>
 
                                 </div>
-                                <hr />
-
 
                                 <div class="form-group">
-                                    <label for="male">Male</label>
-                                    <input type="radio"  value="Male" placeholder="Specify Gender" asp-for="gender" id="male" />
-                                    <label for="female">Female</label>
+                                    <label for="male" class="text-white">Male</label>
+                                    <input type="radio" value="Male" placeholder="Specify Gender" asp-for="gender" id="male" />
+                                    <label for="female" class="text-white">Female</label>
 
-                                    <input type="radio"  value="Female" placeholder="Specify Gender" asp-for="gender" id="female" />
-                                    <br/>
+                                    <input type="radio" value="Female" placeholder="Specify Gender" asp-for="gender" id="female" />
+                                    <br />
                                     <span class="text-danger" asp-validation-for="gender"></span>
 
                                 </div>
-                                <hr />
-
 
                                 <div class="form-group">
-                                    <label for="">Total Passengers</label>
+                                    <label for="" class="text-white">Total Passengers</label>
 
                                     <input type="number" min="1" placeholder="Total Passengers" id="fareDropdown" class="form-control" asp-for="totalPassengers" />
                                     <span class="text-danger" asp-validation-for="totalPassengers"></span>
 
                                 </div>
-                                <hr />
-
 
                                 <div class="form-group">
-                                    <label for="">Departure Date</label>
+                                    <label for="" class="text-white">Departure Date</label>
 
                                     <input type="date" id="fareDropdown" class="form-control" asp-for="dateOfTravel" />
                                     <span class="text-danger" asp-validation-for="dateOfTravel"></span>
 
                                 </div>
-                                <hr />
 
                                 <div class="form-group">
-                                    <label for="">Select Train</label>
+                                    <label for="" class="text-white">Select Train</label>
                                     <br />
                                     <center>
-                                        <select asp-for="trainCategory" id="fareDropdown">
-                                            <option>-----Select Category-----</option>
+                                        <select class="form-control bg-light btn-block" asp-for="trainCategory" id="fareDropdown">
+                                            <option class="text-center">----Select Category----<i class="fab fa-arrow-down"></i></option>
+                                            @if (Train != null && Train.Any())
+                                            {
+                                                @foreach (var passenger in Train)
+                                                {
+                                                    <option class="text-center"><i class="fab fa-arrow-down"></i>@passenger.trainCategory</option>
+                                                }
 
-                                            <option>1AC</option>
-                                            <option>2AC</option>
-                                            <option>3AC</option>
-                                            <option>Sleeper</option>
-                                            <option>General</option>
+                                            }
+                                            else
+                                            {
+                                                <p>No data available.</p>
+                                            }
+
                                         </select>
                                     </center>
+                                    <span class="text-danger" asp-validation-for="trainCategory"></span>
 
                                 </div>
-                                <hr />
 
                                 <div class="form-group">
-                                    <input type="number" id="fareDropdown" class="form-control" asp-for="trainNumber" />
+                                    <label class="text-white">Train Number</label>
+                                    <select class="form-control bg-light btn-block" asp-for="trainNumber" id="fareDropdown">
+                                        <option class="text-center">----Select Train----<i class="fab fa-arrow-down"></i></option>
+                                        @if (Train != null && Train.Any())
+                                        {
+                                            @foreach (var passenger in Train)
+                                            {
+                                                <option class="text-center"><i class="fab fa-arrow-down"></i>@passenger.trainNumber, @passenger.trainName</option>
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            <p>No data available.</p>
+                                        }
+
+                                    </select>
                                     <span class="text-danger" asp-validation-for="trainNumber"></span>
 
                                 </div>
@@ -277,9 +302,9 @@
                         </form>
                     </div>
 
-                    
 
-                    
+
+
 
                 </div>
 
@@ -301,7 +326,7 @@
 
 
 
- 
+
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted mt-4">
         <!-- Section: Social media -->
@@ -322,7 +347,7 @@
                 <a href="" class="me-4">
                     <i class="fab fa-youtube" style="color: #F4C430;"></i>
                 </a>
-                
+
             </div>
             <!-- Right -->
         </section>

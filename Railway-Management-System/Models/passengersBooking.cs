@@ -14,7 +14,7 @@ namespace Railway_Management_System.Models
 
         [Required]
 
-        public int age { get; set; }
+        public string age { get; set; }
 
         [Required]
 
@@ -24,7 +24,7 @@ namespace Railway_Management_System.Models
         public int totalPassengers { get; set; }
         [Required]
 
-        public DateTime dateOfTravel { get; set; }
+        public string dateOfTravel { get; set; }
         [Required]
 
         public string trainCategory { get; set; }
