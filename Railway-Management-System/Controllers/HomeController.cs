@@ -81,7 +81,7 @@ namespace Railway_Management_System.Controllers
 
                 if (trainData != null)
                 {
-                    var fetchTrain = data.citiesAndStates.FirstOrDefault(x => x.city == from && x.city == to && trainDate == trainData.departureTime);
+                    var fetchTrain = data.citiesAndStates.Where(x => x.city == from && x.city == to && trainDate == trainData.departureTime).FirstOrDefault();
 
                     if (fetchTrain != null)
                     {
@@ -150,27 +150,29 @@ namespace Railway_Management_System.Controllers
             if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
             {
                 TempData["error"] = "Sign in for booking";
-
                 return View("Signin");
-
             }
 
-            var passengerData = data.passengerBooking.FirstOrDefault(x => x.passengerName == HttpContext.Session.GetString("userName"));
+            var passengerData = data.passengerBooking.Where(x => x.passengerName == HttpContext.Session.GetString("userName")).FirstOrDefault();
 
             if (passengerData != null)
             {
-                var train = data.passengerBooking.ToList();
+                var compositeModel = new compositeModel
+                {
+                    passengersBookings = data.passengerBooking.ToList()
+                    // Make sure to set other properties like CitiesAndStates, TrainMasters, stationMasters if needed
+                };
 
-                return View(train);
-              
+                return View(compositeModel);
             }
             else
             {
                 TempData["error"] = "No Bookings Found";
                 return View();
-
             }
         }
+
+
 
 
 

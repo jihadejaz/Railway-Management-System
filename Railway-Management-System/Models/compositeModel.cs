@@ -11,6 +11,7 @@ namespace Railway_Management_System.Models
         public List<trainMaster> TrainMasters { get; set; }
 
         public List<stationMaster> stationMasters { get; set; }
+        public List<passengersBooking> passengersBookings { get; set; }
 
 
 
