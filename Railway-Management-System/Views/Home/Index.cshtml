@@ -8,9 +8,14 @@
 @* MAIN SECTION START *@
 
 <div class="container-fluid p-0">
-    @if (TempData["error"] != null)
+    @if (ViewBag.errorMsg != null)
     {
-        <div class="alert alert-danger">@TempData["error"]</div>
+        <span class="text-primary p-1 bg-danger">@ViewBag.errorMsg</span>
+    }
+    else
+    {
+        <span class="text-primary p-1 bg-light">@ViewBag.successMsg</span>
+
     }
     <!-- Carousel -->
     <div id="demo" class="carousel slide" data-bs-ride="carousel">

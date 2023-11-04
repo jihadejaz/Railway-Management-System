@@ -67,16 +67,44 @@ namespace Railway_Management_System.Controllers
 
         [HttpPost]
 
-        public IActionResult searchTrain([Bind("from","to", "trainDate")] compositeModel trainSearch)
+        public IActionResult SearchTrain(string from, string to, DateTime trainDate)
         {
-            if(!ModelState.IsValid)
+            if (string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to) || trainDate == DateTime.MinValue)
             {
                 ViewBag.error = "All fields required";
                 return RedirectToAction("Index");
             }
+            else
+            {
+                // Assuming 'data' is your DbContext
+                var trainData = data.TrainMasters.FirstOrDefault(x => x.departureTime == trainDate);
+
+                if (trainData != null)
+                {
+                    var fetchTrain = data.citiesAndStates.FirstOrDefault(x => x.city == from && x.city == to && trainDate == trainData.departureTime);
+
+                    if (fetchTrain != null)
+                    {
+                        ViewBag.successMsg = "Train found";
+
+                        return View("Index");
+                    }
+                    else
+                    {
+                        ViewBag.errorMsg = "No train found";
+
+                        return View("Index");
+                    }
+                }
+                else
+                {
+                    // Handle the case when 'trainData' is not found.
+                }
+            }
 
             return View("Index");
         }
+
 
         [HttpPost]
         public ActionResult bookAticket([Bind("passengerName, age, gender, totalPassengers, dateOfTravel, trainCategory, trainNumber")] passengersBooking booking)
@@ -116,6 +144,34 @@ namespace Railway_Management_System.Controllers
 
             return View("Index");
         }
+
+        public IActionResult myBookings()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("userName")))
+            {
+                TempData["error"] = "Sign in for booking";
+
+                return View("Signin");
+
+            }
+
+            var passengerData = data.passengerBooking.FirstOrDefault(x => x.passengerName == HttpContext.Session.GetString("userName"));
+
+            if (passengerData != null)
+            {
+                var train = data.passengerBooking.ToList();
+
+                return View(train);
+              
+            }
+            else
+            {
+                TempData["error"] = "No Bookings Found";
+                return View();
+
+            }
+        }
+
 
 
 

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<passengersBooking>
+
+@{
+    ViewData["Title"] = "myBookings";
+}
+
+<h1>myBookings</h1>
+
+<div>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>PNR No</th>
+                    <th>Passenger Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Total Passengers</th>
+                    <th>Date of Departure</th>
+                    <th>Train Compartment</th>
+                    <th>Train Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var data in Model)
+                {
+                    <tr>
+                        <td>@data.PNR_no</td>
+                        <td>@data.passengerName</td>
+                        <td>@data.age</td>
+                        <td>@data.gender</td>
+                        <td>@data.totalPassengers</td>
+                        <td>@data.dateOfTravel</td>
+                        <td>@data.trainCategory</td>
+                        <td>@data.trainNumber</td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

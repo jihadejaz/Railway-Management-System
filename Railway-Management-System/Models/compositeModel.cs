@@ -13,6 +13,7 @@ namespace Railway_Management_System.Models
         public List<stationMaster> stationMasters { get; set; }
 
 
+
         //FARE CALCULATION FIELDS 
 
         [Required]
