@@ -152,8 +152,9 @@ namespace Railway_Management_System.Controllers
                 TempData["error"] = "Sign in for booking";
                 return View("Signin");
             }
+            var loggedUser = Request.HttpContext.Session.GetString("userName");
 
-            var passengerData = data.passengerBooking.Where(x => x.passengerName == HttpContext.Session.GetString("userName")).FirstOrDefault();
+            var passengerData = data.passengerBooking.FirstOrDefault(x => x.passengerName == loggedUser);
 
             if (passengerData != null)
             {

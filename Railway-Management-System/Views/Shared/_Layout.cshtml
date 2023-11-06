@@ -209,7 +209,9 @@
                                 <div class="form-group">
                                     <label for="" class="text-white">Passenger Name</label>
 
-                                    <input class="form-control" id="fareDropdown" asp-for="passengerName" placeholder="Passenger Name" />
+                                    <input class="form-control" id="fareDropdown" asp-for="passengerName" value='@Context.Request.HttpContext.Session.GetString("userName")' />
+
+
                                     <span class="text-danger" asp-validation-for="passengerName"></span>
 
                                 </div>
